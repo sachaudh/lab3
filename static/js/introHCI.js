@@ -34,10 +34,13 @@ function projectClick(e) {
 
     var containingProject = $(this).closest(".project");
     var description = $(containingProject).find(".project-description");
+
     if (description.length == 0) { 
        $(containingProject).append("<div class='project-description'><p>Description of the project.</p></div>"); 
     } else { 
-       description.fadeOut();
+       description.fadeToggle();
+       $(this).find("img").toggleClass("newClass");
+       $(this).find("p").toggleClass("newClass");
     }
 }
 

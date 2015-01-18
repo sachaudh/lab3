@@ -44,3 +44,5 @@ body {
 .project a {
      text-align: center;
 }
+
+.newClass{visibility: hidden}
