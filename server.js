@@ -11,12 +11,15 @@ var PORT = 3000;
 // that makes nontrivial applications easier to build
 var express = require('express');
 
+var logger = require('morgan');
+var compress = require('compression');
+
 // Create the server instance
 var app = express();
 
 // Print logs to the console and compress pages we send
-app.use(express.logger());
-app.use(express.compress());
+app.use(logger('dev'));
+app.use(compress());
 
 // Return all pages in the /static directory
 // whenever they are requested at '/'
